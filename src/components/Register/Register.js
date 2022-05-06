@@ -1,10 +1,64 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Register.css';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import Loading from '../Loading/Loading';
+import auth from '../../firebase.init';
 
 const Register = () => {
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [err, setErr] = useState('');
+    const navigate = useNavigate();
+
+    const [
+        createUserWithEmailAndPassword, loading, user, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
+    const handleEmailBlur = (event) => {
+        setEmail(event.target.value);
+    }
+    const handlePasswordBlur = (event) => {
+        setPassword(event.target.value);
+    }
+    const handleCreateUser = (event) => {
+        event.preventDefault();
+        createUserWithEmailAndPassword(email, password);
+    }
+    if (loading) {
+        return <Loading></Loading>
+    }
+    if (user) {
+        navigate('/home');
+    }
+
     return (
-        <div>
-            <h6>Register here</h6>
+        <div className='w-75 mx-auto border border-2 p-3 w-75 mx-auto rounded-2'>
+            <form onSubmit={handleCreateUser}>
+                <h2 className='text-primary text-center mt-2'>Register</h2>
+                <div className="form-group">
+                    <label>First name</label>
+                    <input type="text" className="form-control" placeholder="First name" />
+                </div>
+                <div className="form-group">
+                    <label>Last name</label>
+                    <input type="text" className="form-control" placeholder="Last name" />
+                </div>
+                <div className="form-group">
+                    <label>Email address</label>
+                    <input onBlur={handleEmailBlur} type="email" className="form-control" placeholder="Enter email" required />
+                </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input onBlur={handlePasswordBlur} type="password" className="form-control" placeholder="Enter password" required />
+                </div>
+                <p className='text-danger'>{error?.message}</p>
+                <input className="btn btn-primary btn-block mt-2 mx-auto d-block w-50" type="submit" value="Register" />
+                <p className="forgot-password text-right">
+                    Already registerd? <Link className='font-italic btn btn-link text-primary pe-auto text-decoration-none' to={'/login'}>Login here</Link>
+                </p>
+            </form>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

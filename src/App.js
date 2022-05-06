@@ -8,10 +8,11 @@ import NotFound from './components/NotFound/NotFound';
 import Header from './components/Shared/Header/Header';
 import Footer from './components/Shared/Footer/Footer';
 import Home from './components/Home/Home';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -22,6 +23,7 @@ function App() {
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
