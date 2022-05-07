@@ -17,6 +17,9 @@ const Item = ({ product }) => {
                     <Card.Text>
                         Description: {description}
                     </Card.Text>
+                    <Card.Text>
+                        Supplier Name: {supplier}
+                    </Card.Text>
                     <h6>
                         Quantity: {quantity} pcs
                     </h6>
