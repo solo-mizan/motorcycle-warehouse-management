@@ -12,7 +12,7 @@ import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
-    <div>
+    <>
       <Header></Header>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
@@ -24,7 +24,7 @@ function App() {
       </Routes>
       <Footer></Footer>
       <ToastContainer></ToastContainer>
-    </div>
+    </>
   );
 }
 

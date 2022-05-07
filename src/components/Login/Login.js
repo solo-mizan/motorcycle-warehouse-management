@@ -44,7 +44,8 @@ const Login = () => {
     }
 
     if (user) {
-        navigate(from, { replace: true });
+        // navigate(from, { replace: true });
+        navigate('/home');
     }
     return (
         <div className='mx-auto border border-2 p-3 w-75 mx-auto rounded-2'>
