@@ -21,7 +21,7 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link eventKey="1" as={Link} to={'/home'}>Home</Nav.Link>
-                        <Nav.Link eventKey="2" as={Link} to={'/services'}>Manage Items</Nav.Link>
+                        <Nav.Link eventKey="2" as={Link} to={'/manageinventories'}>Manage Items</Nav.Link>
                         <Nav.Link eventKey="3" as={Link} to={'/reviews'}>Add Items</Nav.Link>
                         <Nav.Link eventKey="3" as={Link} to={'/reviews'}>My Items</Nav.Link>
                         <Nav.Link eventKey="3" as={Link} to={'/reviews'}>Reviews</Nav.Link>

@@ -9,6 +9,7 @@ import Header from './components/Shared/Header/Header';
 import Footer from './components/Shared/Footer/Footer';
 import Home from './components/Home/Home';
 import { ToastContainer } from 'react-toastify';
+import ManageInventories from './components/ManageInventories/ManageInventories';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/manageinventories' element={<ManageInventories></ManageInventories>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
