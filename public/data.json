@@ -1,110 +1,110 @@
-[
-    {
-        "index": 0,
-        "image": "https://i.ibb.co/ph6Xc0d/bajaj-ct-100.webp",
-        "price": 730,
-        "quantity": 7,
-        "name": "Bajaj CT 100cc",
-        "supplier": "WEBIOTIC",
-        "description": "maelogan@webiotic.com"
-    },
-    {
-        "index": 1,
-        "image": "https://i.ibb.co/cYk8jsj/bajaj-discover-125.jpg",
-        "price": 627,
-        "quantity": 20,
-        "name": "Bajaj Discover 125cc",
-        "supplier": "PARCOE",
-        "description": "mathewslogan@parcoe.com"
-    },
-    {
-        "index": 2,
-        "image": "https://i.ibb.co/9nSGVbS/bajaj-platina.webp",
-        "price": 971,
-        "quantity": 8,
-        "name": "Bajaj Platina 100cc",
-        "supplier": "ANDRYX",
-        "description": "hannahlogan@andryx.com"
-    },
-    {
-        "index": 3,
-        "image": "https://i.ibb.co/xLtBXCt/bajaj-pulsar-125.jpg",
-        "price": 681,
-        "quantity": 5,
-        "name": "Bajaj Pulsar 125cc",
-        "supplier": "CYTREX",
-        "description": "valerialogan@cytrex.com"
-    },
-    {
-        "index": 4,
-        "image": "https://i.ibb.co/DrCzQQW/bajaj-pulsar-220f.webp",
-        "price": 945,
-        "quantity": 7,
-        "name": "Bajaj Pulsar 220cc",
-        "supplier": "SONGBIRD",
-        "description": "romerologan@songbird.com"
-    },
-    {
-        "index": 5,
-        "image": "https://i.ibb.co/sJ1Krqg/tvs-striker.jpg",
-        "price": 770,
-        "quantity": 11,
-        "name": "TVS Striker 125cc",
-        "supplier": "NAMEBOX",
-        "description": "ashleelogan@namebox.com"
-    },
-    {
-        "index": 6,
-        "image": "https://i.ibb.co/HtS0Hkt/tvs-apache-rtr-160-4v.webp",
-        "price": 611,
-        "quantity": 11,
-        "name": "TVS Apache 4V 160cc",
-        "supplier": "ARCHITAX",
-        "description": "belllogan@architax.com"
-    },
-    {
-        "index": 7,
-        "image": "https://i.ibb.co/N72dWKJ/bajaj-pulsar-ns.webp",
-        "price": 952,
-        "quantity": 4,
-        "name": "Bajaj Pulsar NS 160cc",
-        "supplier": "HALAP",
-        "description": "haydenlogan@halap.com"
-    },
-    {
-        "index": 8,
-        "image": "https://i.ibb.co/ctR5PQ0/discover-110.webp",
-        "price": 534,
-        "quantity": 14,
-        "name": "Bajaj Discover 110cc",
-        "supplier": "QUARMONY",
-        "description": "albertlogan@quarmony.com"
-    },
-    {
-        "index": 9,
-        "image": "https://i.ibb.co/LZVHRjS/rks.jpg",
-        "price": 713,
-        "quantity": 10,
-        "name": "Beneli RKS 125cc",
-        "supplier": "BLEENDOT",
-        "description": "letalogan@bleendot.com"
-    },
-    {
-        "index": 10,
-        "image": "https://i.ibb.co/6XNfkPS/rtr-160.webp",
-        "price": 871,
-        "quantity": 5,
-        "name": "TVS RTR 160cc",
-        "supplier": "GEEKMOSIS",
-        "description": "carlylogan@geekmosis.com"
-    },
-    {
-        "index": 11,
-        "image": "https://i.ibb.co/KDVzYGx/suzuki-sf.png",
-        "price": 611,
-        "quantity": 5,
-        "name": "Suzuki SF 155cc",
-        "supplier": "INDEXIA",
-        "description": "houselogan@indexia.com"
-    }
-]
+// [
+//     {
+//         "index": 0,
+//         "image": "https://i.ibb.co/ph6Xc0d/bajaj-ct-100.webp",
+//         "price": 730,
+//         "quantity": 7,
+//         "name": "Bajaj CT 100cc",
+//         "supplier": "WEBIOTIC",
+//         "description": "maelogan@webiotic.com"
+//     },
+//     {
+//         "index": 1,
+//         "image": "https://i.ibb.co/cYk8jsj/bajaj-discover-125.jpg",
+//         "price": 627,
+//         "quantity": 20,
+//         "name": "Bajaj Discover 125cc",
+//         "supplier": "PARCOE",
+//         "description": "mathewslogan@parcoe.com"
+//     },
+//     {
+//         "index": 2,
+//         "image": "https://i.ibb.co/9nSGVbS/bajaj-platina.webp",
+//         "price": 971,
+//         "quantity": 8,
+//         "name": "Bajaj Platina 100cc",
+//         "supplier": "ANDRYX",
+//         "description": "hannahlogan@andryx.com"
+//     },
+//     {
+//         "index": 3,
+//         "image": "https://i.ibb.co/xLtBXCt/bajaj-pulsar-125.jpg",
+//         "price": 681,
+//         "quantity": 5,
+//         "name": "Bajaj Pulsar 125cc",
+//         "supplier": "CYTREX",
+//         "description": "valerialogan@cytrex.com"
+//     },
+//     {
+//         "index": 4,
+//         "image": "https://i.ibb.co/DrCzQQW/bajaj-pulsar-220f.webp",
+//         "price": 945,
+//         "quantity": 7,
+//         "name": "Bajaj Pulsar 220cc",
+//         "supplier": "SONGBIRD",
+//         "description": "romerologan@songbird.com"
+//     },
+//     {
+//         "index": 5,
+//         "image": "https://i.ibb.co/sJ1Krqg/tvs-striker.jpg",
+//         "price": 770,
+//         "quantity": 11,
+//         "name": "TVS Striker 125cc",
+//         "supplier": "NAMEBOX",
+//         "description": "ashleelogan@namebox.com"
+//     },
+//     {
+//         "index": 6,
+//         "image": "https://i.ibb.co/HtS0Hkt/tvs-apache-rtr-160-4v.webp",
+//         "price": 611,
+//         "quantity": 11,
+//         "name": "TVS Apache 4V 160cc",
+//         "supplier": "ARCHITAX",
+//         "description": "belllogan@architax.com"
+//     },
+//     {
+//         "index": 7,
+//         "image": "https://i.ibb.co/N72dWKJ/bajaj-pulsar-ns.webp",
+//         "price": 952,
+//         "quantity": 4,
+//         "name": "Bajaj Pulsar NS 160cc",
+//         "supplier": "HALAP",
+//         "description": "haydenlogan@halap.com"
+//     },
+//     {
+//         "index": 8,
+//         "image": "https://i.ibb.co/ctR5PQ0/discover-110.webp",
+//         "price": 534,
+//         "quantity": 14,
+//         "name": "Bajaj Discover 110cc",
+//         "supplier": "QUARMONY",
+//         "description": "albertlogan@quarmony.com"
+//     },
+//     {
+//         "index": 9,
+//         "image": "https://i.ibb.co/LZVHRjS/rks.jpg",
+//         "price": 713,
+//         "quantity": 10,
+//         "name": "Beneli RKS 125cc",
+//         "supplier": "BLEENDOT",
+//         "description": "letalogan@bleendot.com"
+//     },
+//     {
+//         "index": 10,
+//         "image": "https://i.ibb.co/6XNfkPS/rtr-160.webp",
+//         "price": 871,
+//         "quantity": 5,
+//         "name": "TVS RTR 160cc",
+//         "supplier": "GEEKMOSIS",
+//         "description": "carlylogan@geekmosis.com"
+//     },
+//     {
+//         "index": 11,
+//         "image": "https://i.ibb.co/KDVzYGx/suzuki-sf.png",
+//         "price": 611,
+//         "quantity": 5,
+//         "name": "Suzuki SF 155cc",
+//         "supplier": "INDEXIA",
+//         "description": "houselogan@indexia.com"
+//     }
+// ]

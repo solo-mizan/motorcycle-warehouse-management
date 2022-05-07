@@ -12,13 +12,13 @@ const Item = ({ product }) => {
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <h6>
-                        Price: {price}
+                        Price: {price} $
                     </h6>
                     <Card.Text>
                         Description: {description}
                     </Card.Text>
                     <h6>
-                        Quantity: {quantity}
+                        Quantity: {quantity} pcs
                     </h6>
                     <Button variant="primary">Update</Button>
                 </Card.Body>
