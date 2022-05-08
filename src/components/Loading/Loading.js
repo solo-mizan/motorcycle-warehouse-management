@@ -3,7 +3,7 @@ import { Spinner } from 'react-bootstrap';
 
 const Loading = () => {
     return (
-        <>
+        <div className='text-center justify-content-center'>
             <Spinner animation="border" variant="primary" />
             <Spinner animation="border" variant="secondary" />
             <Spinner animation="border" variant="success" />
@@ -20,7 +20,7 @@ const Loading = () => {
             <Spinner animation="grow" variant="info" />
             <Spinner animation="grow" variant="light" />
             <Spinner animation="grow" variant="dark" />
-        </>
+        </div>
     );
 };
 

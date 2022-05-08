@@ -4,6 +4,7 @@
 
 [Github server side code link](https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-solo-mizan)
 
+[Github issue link](https://github.com/solo-mizan/router-firebase-integration/issues/1)
 
 [Netlify live site link](https://ephemeral-lily-3ea1e9.netlify.app/)
 
