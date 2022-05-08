@@ -1,11 +1,31 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import useProducts from '../hooks/useProducts';
 
 const ManageInventories = () => {
 
-    const [products] = useProducts();
+    const [products, setProducuts] = useProducts();
+
+    const handleDelete = (id) => {
+        const confirm = window.confirm('Are you sure to delete this Item?');
+        if (confirm) {
+            const url = `http://localhost:5000/item/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data) {
+                        toast('Item deleted successfully.')
+                        const remaining = products.filter(product => product._id !== id);
+                        setProducuts(remaining);
+                    }
+                })
+        }
+    }
 
     return (
         <section>
@@ -15,7 +35,7 @@ const ManageInventories = () => {
 
             <div className='items'>
                 {
-                    products.map(product => <div className='text-center mx-auto'>
+                    products.map(product => <div key={product._id} className='text-center mx-auto'>
                         <Card style={{ width: '18rem', height: '30rem', backgroundColor: 'rgb(225, 225, 225)' }}>
                             <Card.Img variant="top" src={product.image} />
                             <Card.Body>
@@ -30,7 +50,7 @@ const ManageInventories = () => {
                                     Quantity: {product.quantity} pcs
                                 </h6>
                                 <Button className='mx-3' variant="success">Update Stock</Button>
-                                <Button variant="danger">Delete</Button>
+                                <Button onClick={() => handleDelete(product._id)} variant="danger">Delete</Button>
                             </Card.Body>
                         </Card>
                     </div>)
