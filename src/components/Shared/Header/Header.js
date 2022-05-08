@@ -1,10 +1,10 @@
 import { signOut } from 'firebase/auth';
-    import React from 'react';
-    import { Container, Nav, Navbar } from 'react-bootstrap';
-    import { useAuthState } from 'react-firebase-hooks/auth';
-    import { Link } from 'react-router-dom';
+import React from 'react';
+import { Container, Nav, Navbar } from 'react-bootstrap';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 import auth from '../../../firebase.init';
-    import './Header.css';
+import './Header.css';
 
 const Header = () => {
 
@@ -21,10 +21,10 @@ const Header = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link eventKey="1" as={Link} to={'/home'}>Home</Nav.Link>
-                        {
-                          
-                        }
-                        <Nav.Link eventKey="3" as={Link} to={'/reviews'}>Reviews</Nav.Link>
+                        <Nav.Link eventKey="2" as={Link} to={'/manageinventories'}>Manage Items</Nav.Link>
+                        <Nav.Link eventKey="3" as={Link} to={'/additem'}>Add Items</Nav.Link>
+                        <Nav.Link eventKey="3" as={Link} to={'/myitem'}>My Items</Nav.Link>
+                        {/* <Nav.Link eventKey="3" as={Link} to={'/manageinventories'}>Reviews</Nav.Link> */}
                         <Nav.Link eventKey="4" as={Link} to={'/blogs'}>Blogs</Nav.Link>
                         <Nav.Link eventKey="5" as={Link} to={'/about'}>About me</Nav.Link>
                         {

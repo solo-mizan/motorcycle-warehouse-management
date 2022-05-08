@@ -1,36 +1,42 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { useForm } from "react-hook-form";
+import { toast } from 'react-toastify';
 
 const AddItem = () => {
+    const { register, handleSubmit } = useForm();
 
-    const handleAddItem = (event) => {
+    const onSubmit = data => {
+        console.log(data);
+        const url = `http://localhost:5000/items`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+                if(result) {
+                    toast('Item added successfully!')
+                }
+            })
+    };
 
-    }
 
     return (
         <div className='w-50 mx-auto text-center'>
             <h1 className='m-2'>Add item here</h1>
-            <Form>
-                <Form.Group className="mb-3" controlId="productName">
-                    <Form.Control autoComplete='off' type="text" placeholder="Enter Product Name" />
-                </Form.Group>
-
-                <Form.Group className="mb-3" controlId="productImg">
-                    <Form.Control autoComplete='off' type="text" placeholder="Product ImageURL" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="productPrice">
-                    <Form.Control autoComplete='off' type="text" placeholder="Price" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="productQuantity">
-                    <Form.Control autoComplete='off' type="text" placeholder="Quantity" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="description">
-                    <Form.Control autoComplete='off' type="text" placeholder="Description" />
-                </Form.Group>
-                <Button variant="primary" type="submit">
-                    Add to Inventory
-                </Button>
-            </Form>
+            <form className='d-flex flex-column' onSubmit={handleSubmit(onSubmit)}>
+                <input className='mb-2' placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
+                <textarea className='mb-2' placeholder='Description' {...register("description")} />
+                <input className='mb-2' placeholder='Price' type="number" {...register("price")} />
+                <input className='mb-2' placeholder='Photo URL' type="text" {...register("image")} />
+                <input className='mb-2' placeholder='Supplier' type="text" {...register("supplier")} />
+                <input className='mb-2' placeholder='Quantity' type="number" {...register("quantity")} />
+                <input type="submit" value="Add Item" />
+            </form>
         </div>
     );
 };

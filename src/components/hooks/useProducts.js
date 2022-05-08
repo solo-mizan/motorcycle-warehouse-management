@@ -4,7 +4,8 @@ const useProducts = () => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        const url = `https://sheltered-river-57663.herokuapp.com/items`;
+        // const url = `https://sheltered-river-57663.herokuapp.com/items`;
+        const url = `http://localhost:5000/items`
         fetch(url)
             .then(res => res.json())
             .then(data => {
