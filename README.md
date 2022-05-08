@@ -10,6 +10,7 @@
 
 ## Key specification:
 * Connected to mongoDB database.
+* Used Json Web Token for token.
 * Used nodeJS (ExpressJS) as backend language.
 * We used custom hooks for data loading.
 * We set a page for 404 not found.

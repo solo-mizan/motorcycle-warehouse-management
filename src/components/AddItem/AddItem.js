@@ -7,7 +7,7 @@ const AddItem = () => {
 
     const onSubmit = data => {
         console.log(data);
-        const url = `http://localhost:5000/items`;
+        const url = `https://sheltered-river-57663.herokuapp.com/items`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -18,7 +18,7 @@ const AddItem = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
-                if(result) {
+                if (result) {
                     toast('Item added successfully!')
                 }
             })

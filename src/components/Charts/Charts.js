@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import { LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer, Legend, PieChart, Pie, AreaChart, Area } from 'recharts';
+import './Charts.css';
 
 const Charts = () => {
 
@@ -43,13 +44,13 @@ const Charts = () => {
     ]
 
     return (
-        <div className='d-flex mb-4 justify-content-center text-center'>
+        <div className='charts mb-4 text-center'>
             <div>
-                <h2>Annual sales of Motor Bike</h2>
+                <h2>Warehouse Motor Bike Stocks</h2>
 
                 <LineChart
-                    width={400}
-                    height={270}
+                    width={380}
+                    height={260}
                     data={data}
                     margin={{
                         top: 5,
@@ -68,10 +69,10 @@ const Charts = () => {
                 </LineChart>
             </div>
             <div>
-                <h2>Sales vs cost</h2>
+                <h2>Annual Sales of Bike</h2>
                 <AreaChart
-                    width={400}
-                    height={270}
+                    width={380}
+                    height={260}
                     data={data}
                     margin={{
                         top: 10,

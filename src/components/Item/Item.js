@@ -10,8 +10,8 @@ const Item = ({ product }) => {
             <Card style={{ width: '18rem', height: '30rem', backgroundColor: 'rgb(225, 225, 225)' }}>
                 <Card.Img variant="top" src={image} />
                 <Card.Body>
-                    <Card.Title>{name}</Card.Title>
-                    <h6>
+                    <Card.Title className='text-dark'>{name}</Card.Title>
+                    <h6 className='text-black'>
                         Price: {price} $
                     </h6>
                     <Card.Text>
@@ -20,7 +20,7 @@ const Item = ({ product }) => {
                     <Card.Text>
                         Supplier Name: {supplier}
                     </Card.Text>
-                    <h6>
+                    <h6 className='text-dark'>
                         Quantity: {quantity} pcs
                     </h6>
                     <Button variant="primary">Update</Button>

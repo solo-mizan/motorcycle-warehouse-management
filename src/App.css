@@ -1,5 +1,6 @@
-body{
+body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url('https://i.ibb.co/HNcwMkf/pexels-gradienta-7130555.jpg');
 }

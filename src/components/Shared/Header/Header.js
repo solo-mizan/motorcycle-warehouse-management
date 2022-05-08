@@ -16,7 +16,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect className='navbar-div' expand="lg" sticky='top'>
             <Container>
-                <Navbar.Brand className='text-primary' as={Link} to={'/home'}>Warehouse Management</Navbar.Brand>
+                <Navbar.Brand className='text-primary' as={Link} to={'/home'}>Motor Bike Management</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
@@ -29,7 +29,7 @@ const Header = () => {
                             </>
                         }
                         <Nav.Link eventKey="4" as={Link} to={'/blogs'}>Blogs</Nav.Link>
-                        <Nav.Link eventKey="5" as={Link} to={'/about'}>About me</Nav.Link>
+                        <Nav.Link eventKey="5" as={Link} to={'/about'}>About us</Nav.Link>
                         {
                             user ?
                                 <Nav.Link className='btn btn-primary text-white' eventKey={"7"} onClick={handleSignOut}>Sign out</Nav.Link>
