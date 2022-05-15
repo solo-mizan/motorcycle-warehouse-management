@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Blogs from './components/Blogs/Blogs';
@@ -15,6 +14,7 @@ import ItemDetails from './components/ItemDetails/ItemDetails';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import AboutUs from './components/AboutUs/AboutUs';
 import MyItem from './components/MyItem/MyItem';
+import Charts from './components/Charts/Charts';
 
 function App() {
   return (
@@ -30,8 +30,11 @@ function App() {
         <Route path='/additem' element={<RequireAuth>
           <AddItem></AddItem>
         </RequireAuth>}></Route>
-        <Route path='/item/:id' element={<ItemDetails></ItemDetails>}></Route>
+        <Route path='/item/:id' element={<RequireAuth>
+          <ItemDetails></ItemDetails>
+        </RequireAuth>}></Route>
         <Route path='myitem' element={<MyItem></MyItem>}></Route>
+        <Route path='charts' element={<Charts></Charts>}></Route>
         <Route path='/about' element={<AboutUs></AboutUs>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>

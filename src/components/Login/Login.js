@@ -13,7 +13,7 @@ import axios from 'axios';
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
-    let from = location.state?.from?.pathname || "/";
+    let from = location?.state?.from?.pathname || "/";
 
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -23,6 +23,7 @@ const Login = () => {
     const [
         signInWithEmailAndPassword,
         user,
+        loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
@@ -31,7 +32,7 @@ const Login = () => {
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('https://sheltered-river-57663.herokuapp.com/login', { email });
+        const { data } = await axios.post('https://sleepy-earth-16299.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
     }
@@ -43,18 +44,17 @@ const Login = () => {
             toast('Email sent. Check your mailbox');
         }
         else {
-            toast('please enter your email address');
+            toast('Please enter your Email address');
         }
     }
 
     if (user) {
-        // navigate(from, { replace: true });
-        navigate('/home');
+        navigate(from, { replace: true } || '/home')
     }
     return (
         <div className='mx-auto border border-2 p-3 w-75 mx-auto rounded-2'>
             <h2 className='text-primary text-center mt-2'>Please Login</h2>
-            <Form onSubmit={handleUserSignIn}>
+            <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control ref={emailRef} type="email" placeholder="Enter email" required />
@@ -72,11 +72,11 @@ const Login = () => {
                     <br />
                     <p className='text-danger'>{error?.message}</p>
                 </Form.Group>
-                <input className='btn btn-primary mb-2 w-50 mx-auto d-block' type="submit" value="Login" />
+                <input onClick={handleUserSignIn} className='btn btn-primary mb-2 w-50 mx-auto d-block' type="submit" value="Login" />
                 <p>Forget Password? <span onClick={resetPassword} className='btn btn-link text-primary pe-auto text-decoration-none'> Reset Password</span></p>
                 <p>Don't have an Account? <Link to={'/register'} className='text-primary pe-auto text-decoration-none'> Register here</Link></p>
-                <SocialLogin></SocialLogin>
             </Form>
+            <SocialLogin></SocialLogin>
         </div>
     );
 };

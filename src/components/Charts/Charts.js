@@ -44,49 +44,52 @@ const Charts = () => {
     ]
 
     return (
-        <div className='charts mb-4 text-center'>
-            <div>
-                <h2>Warehouse Motor Bike Stocks</h2>
+        <div>
+            <h1 className='text-success text-center mb-4'>Bike Inventory Stock through Graphs</h1>
+            <div className='charts mb-4'>
+                <div>
+                    <h2 className='text-center'>Warehouse Motor Bike Stocks</h2>
 
-                <LineChart
-                    width={380}
-                    height={260}
-                    data={data}
-                    margin={{
-                        top: 5,
-                        right: 30,
-                        left: 20,
-                        bottom: 5,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="revenue" />
-                    <YAxis />
-                    <Tooltip />
-                    <Legend />
-                    <Line type="monotone" dataKey="sell" stroke="#8884d8" activeDot={{ r: 8 }} />
-                    <Line type="monotone" dataKey="investment" stroke="#82ca9d" />
-                </LineChart>
-            </div>
-            <div>
-                <h2>Annual Sales of Bike</h2>
-                <AreaChart
-                    width={380}
-                    height={260}
-                    data={data}
-                    margin={{
-                        top: 10,
-                        right: 30,
-                        left: 0,
-                        bottom: 0,
-                    }}
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="month" />
-                    <YAxis />
-                    <Tooltip />
-                    <Area type="monotone" dataKey="sell" stroke="#8884d8" fill="#8884d8" />
-                </AreaChart>
+                    <LineChart
+                        width={360}
+                        height={250}
+                        data={data}
+                        margin={{
+                            top: 5,
+                            right: 30,
+                            left: 20,
+                            bottom: 5,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="revenue" />
+                        <YAxis />
+                        <Tooltip />
+                        <Legend />
+                        <Line type="monotone" dataKey="sell" stroke="#8884d8" activeDot={{ r: 8 }} />
+                        <Line type="monotone" dataKey="investment" stroke="#82ca9d" />
+                    </LineChart>
+                </div>
+                <div>
+                    <h2 className='text-center'>Annual Sales of Bike</h2>
+                    <AreaChart
+                        width={360}
+                        height={250}
+                        data={data}
+                        margin={{
+                            top: 10,
+                            right: 30,
+                            left: 0,
+                            bottom: 0,
+                        }}
+                    >
+                        <CartesianGrid strokeDasharray="3 3" />
+                        <XAxis dataKey="month" />
+                        <YAxis />
+                        <Tooltip />
+                        <Area type="monotone" dataKey="sell" stroke="#8884d8" fill="#8884d8" />
+                    </AreaChart>
+                </div>
             </div>
         </div>
     )

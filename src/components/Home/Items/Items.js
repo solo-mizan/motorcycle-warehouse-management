@@ -11,7 +11,7 @@ const Items = () => {
 
     return (
         <section>
-            <div className='items mb-4 mt-2'>
+            <div className='items m-4 mx-auto p-2'>
                 {
                     products.slice(0, 6).map(product => <Item
                         product={product}
@@ -19,7 +19,7 @@ const Items = () => {
                     ></Item>)
                 }
             </div>
-            <Button variant='warning' className='m-4 d-block' as={Link} to='/manageinventories'>Click here to Manage Inventories</Button>
+            <Button variant='success' className='my-4 d-block w-50 mx-auto' as={Link} to='/manageinventories'>Click here to Manage Inventories</Button>
         </section>
     );
 };

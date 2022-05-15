@@ -1,17 +1,21 @@
 import React from 'react';
 import { Button, Card } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import useProducts from '../hooks/useProducts';
 
 const ManageInventories = () => {
-
+    const navigate = useNavigate();
     const [products, setProducuts] = useProducts();
+
+    const navigateToItemDetail = (id) => {
+        navigate(`/item/${id}`);
+    }
 
     const handleDelete = (id) => {
         const confirm = window.confirm('Are you sure to delete this Item?');
         if (confirm) {
-            const url = `https://sheltered-river-57663.herokuapp.com/item/${id}`;
+            const url = `https://sleepy-earth-16299.herokuapp.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -29,27 +33,27 @@ const ManageInventories = () => {
 
     return (
         <section>
-            <h1 className='text-center text-success m-4'>Manage Your Inventory</h1>
+            <h1 className='text-center text-success mt-2 mb-4'>Manage Your Inventory</h1>
 
-            <Button as={Link} to='/additem' className='btn btn-success mx-auto d-block mb-3'>Click here to Add New Item</Button>
+            <Button as={Link} to='/additem' className='btn btn-success w-50 mx-auto d-block mb-3'>Click here to Add New Item</Button>
 
-            <div className='items'>
+            <div className='items m-4 p-2'>
                 {
                     products.map(product => <div key={product._id} className='text-center mx-auto'>
-                        <Card style={{ width: '18rem', height: '30rem', backgroundColor: 'rgb(225, 225, 225)' }}>
-                            <Card.Img variant="top" src={product.image} />
+                        <Card style={{ width: '18rem', backgroundColor: '#a2edee' }}>
+                            <Card.Img className='img-fluid' variant="top" src={product.image} />
                             <Card.Body>
-                                <Card.Title>{product.name}</Card.Title>
-                                <h6>
+                                <Card.Title className='text-black'>{product.name}</Card.Title>
+                                <h6 className='text-dark'>
                                     Price: {product.price} $
                                 </h6>
                                 <Card.Text>
                                     Description: {product.description}
                                 </Card.Text>
-                                <h6>
+                                <h6 className='text-dark'>
                                     Quantity: {product.quantity} pcs
                                 </h6>
-                                <Button className='mx-3' variant="success">Update Stock</Button>
+                                <Button onClick={() => navigateToItemDetail(product._id)} className='mx-3' variant="success">Update Stock</Button>
                                 <Button onClick={() => handleDelete(product._id)} variant="danger">Delete</Button>
                             </Card.Body>
                         </Card>

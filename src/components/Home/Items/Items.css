@@ -1,11 +1,22 @@
 .items {
     display: grid;
     gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(3, 1fr); */
     color: rgba(142, 183, 255, 0.265);
+    justify-content: space-around;
 
 }
 
+@media only screen and (max-width: 2000px) {
+    .items {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .items {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
 @media only screen and (max-width: 1000px) {
     .items {
         grid-template-columns: repeat(2, 1fr);

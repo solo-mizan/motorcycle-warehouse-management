@@ -13,8 +13,8 @@ const Banner = () => {
             <Carousel showArrows={true}>
 
                 {
-                    products?.map(product => <div>
-                        <img src={product?.image} alt="" />
+                    products?.map(product => <div key={product._id}>
+                        <img className='w-75 mx-auto' src={product?.image} alt="" />
                         <p className="legend">{product?.name}</p>
                     </div>)
                 }

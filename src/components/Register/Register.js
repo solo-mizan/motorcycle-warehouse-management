@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Register.css';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useCreateUserWithEmailAndPassword, useSendEmailVerification, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import Loading from '../Loading/Loading';
@@ -9,11 +9,12 @@ import auth from '../../firebase.init';
 const Register = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [err, setErr] = useState('');
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location?.state?.from?.pathname || "/";
 
     const [
-        createUserWithEmailAndPassword, loading, user, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+        createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
 
     const handleEmailBlur = (event) => {
         setEmail(event.target.value);
@@ -29,7 +30,7 @@ const Register = () => {
         return <Loading></Loading>
     }
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true } || '/home');
     }
 
     return (

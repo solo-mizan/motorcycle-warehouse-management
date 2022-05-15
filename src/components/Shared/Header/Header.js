@@ -8,7 +8,7 @@ import './Header.css';
 
 const Header = () => {
 
-    const [user] = useAuthState(auth);
+    const [user, loading, error] = useAuthState(auth);
     const handleSignOut = () => {
         signOut(auth);
     }
@@ -26,6 +26,7 @@ const Header = () => {
                                 <Nav.Link eventKey="2" as={Link} to={'/manageinventories'}>Manage Items</Nav.Link>
                                 <Nav.Link eventKey="3" as={Link} to={'/additem'}>Add Items</Nav.Link>
                                 <Nav.Link eventKey="3" as={Link} to={'/myitem'}>My Items</Nav.Link>
+                                <Nav.Link eventKey="3" as={Link} to={'/charts'}>Stock Charts</Nav.Link>
                             </>
                         }
                         <Nav.Link eventKey="4" as={Link} to={'/blogs'}>Blogs</Nav.Link>

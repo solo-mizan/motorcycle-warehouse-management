@@ -4,19 +4,26 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { fab, faTwitterSquare, faFacebook, faLinkedin, faGithub, faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const SocialLogin = () => {
     const navigate = useNavigate();
+    const location = useLocation();
+    let from = location?.state?.from?.pathname || "/";
 
-    const [signInWithGoogle, user, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
 
     const handleSignInWithGoogle = () => {
         signInWithGoogle();
     }
 
     if (user) {
-        navigate('/home');
+        navigate(from, { replace: true } || '/home')
+    }
+
+    if (error) {
+        toast(error.message);
     }
 
     return (
